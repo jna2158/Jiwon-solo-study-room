@@ -1,0 +1,105 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49466;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro';
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex; /* 가로로 배열 한다.*/
+    justify-content: space-between; /* space를 사이사이에 넣어준다. */
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 12px;
+}
+
+.navbar__logo {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.navbar__logo i {
+    color: var(--accent-color);
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li {
+    padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.navbar__icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar__icons li {
+    padding: 8px 12px;
+}
+
+.navbar__toggleBtn {
+    display: none; /* 화면이 작아졌을 때에만 보이도록 하기 위해 기본셋팅은 none으로 한다. */ 
+    /* 부모 엘리먼트 내부에 속박되지 않고 독립된 배치 문맥을 가지게 된다. 
+       단, 상위 엘리먼트 중에 position 속성이 relative인 엘리먼트가 있다면 
+       그 중 가장 가까운 엘리먼트의 내부에서만 엘리먼트를 자유롭게 배치할 수 있다. */
+    position: absolute; 
+    right: 32px;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 768px) {
+    /* 메뉴와 아이템들을 전부 밑으로 내린다. */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start; /* 중심축을 왼쪽으로 바꾼다. */
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none; /* 햄버거 버튼을 클릭했을 때 메뉴들이 나오도록 하기 위해 기본셋팅은 none으로 한다.*/
+        flex-direction: column;
+        align-items: center; /* 중심축을 가운데로 바꾼다. */
+        width: 100%;
+    }
+
+    .navbar__menu li {
+        width: 100%; /* 너비가 넓어지면 text는 자동으로 왼쪽으로 정렬된다. */
+        text-align: center;
+    }
+
+    .navbar__icons {
+        display: none; /* 햄버거 버튼을 클릭했을 때 메뉴들이 나오도록 하기 위해 기본셋팅은 none으로 한다.*/
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+}
