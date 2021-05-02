@@ -1,0 +1,81 @@
+/*
+flexbox는 container에 꾸며주는 속성값들이 있고, item 각각 꾸며줄 수 있는 속성값들이 있다.
+flexbox에는 2가지의 축이 있는데, 중심축, 반대축이 있다. 이 축은 수평이냐 수직이냐에 따라 바뀌어질 수 있다.!
+*/
+.container {
+    background: beige;
+    height: 100vh; /* 부모에 상관없이 100%를 쓰겠다. */
+    /* height: 100%; container가 들어있는 부모(body)의 높이의 100%를 채울것이다. */
+
+    display: flex; /* 아이템들이 왼쪽에서 오른쪽으로 정렬된다. */
+   /* flex-direction: row; 기본값. 왼쪽에서 오른쪽으로 정렬된다. */
+   /* flex-direction: row-reverse;  오른쪽에서 왼쪽으로 정렬된다. */
+   /* flex-direction: column;  위에서 아래로 정렬된다. */
+   /* flex-direction: column-reverse; 아래에서 위로 정렬된다. */
+   /* flex-wrap: nowrap; 기본값. 화면이 아무리 작아져도 아이템들이 한줄에 계속 붙어있다. */
+   /* flex-wrap: wrap;  아이템들이 화면에 꽉 차게 되면 자동적으로 다음 라인으로 넘어간다. */
+   /* flex-wrap: wrap-reverse; 거꾸로 다음 라인으로 넘어간다. */
+   /*flex-flow: column nowrap;*/
+   /* justify-content: flex-start;   기본값. 중심축에서 아이템들을 어떻게 배치할것인지 결정한다.*/
+   /* justify-content: flex-end;  오른쪽(아래쪽) 축으로 아이템을 배치한다. reverse와는 다르게 아이템들의 순서는 유지된다.*/
+   /* justify-content: center; 가운데 축으로 아이템을 배치한다. */
+   /* justify-content: space-around; 아이템을 둘러싸게 space를 넣어준다. 1번 10번은 space 조금, 나머지는 두 아이템의 space가 합쳐진 것이기 때문에 space가 크다. */
+   /* justify-content: space-evenly; 모든 아이템의 space가 동일하다. */
+   /* justify-content: space-between; 1번과 10번은 space가 없고 나머지 아이템들만 space가 있다.*/
+   align-items: baseline;  /* 반대축에서 아이템들을 어떻게 배치할 것인지 결정한다. 모든 아이템의 높이가 동일하도록 한다.*/
+
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.item1 {
+    background: red;
+    /* order: 1; 아이템의 순서를 지정해줄 수 있다. 기본적으로 모두 0으로 지정되어있어서 html에 적혀진 순서대로 화면에 나온다. */
+    /* flex-grow: 1;  기본값은 0. flex-grow를 지정하면 자신의 고유한 크기를 유지하려고 하는 것이 아니라 화면에 꽉 차게 나타난다. */
+    /* flex-shrink: 1 ;  화면이 점점 작아졌을 때 어떻게 행동할 것인지를 지정하는 것이다. */
+    /* flex-basis: 60%; 아이템들이 공간을 얼마나 차지해야 하는지 조금 더 명시적으로 지정해줄 수 있다. 다른 아이템들에 비해서 60%의 공간을 차지한다. */
+    align-self: center; /* 각각의 아이템들을 정렬할 수 있다. */
+}
+
+.item2 {
+    background: orange;
+     /* flex-grow: 2; 화면이 커지면 item1보다 2배 더 크게 늘어난다. */
+     /* flex-shrink: 2;  화면이 줄어들면 item1보다 2배 더 작게 줄어든다. */
+     flex: 2 2 auto; /* grow shrink basis */
+}
+
+.item3 {
+    background: yellow;
+}
+
+.item4 {
+    background: greenyellow;
+}
+
+.item5 {
+    background: green;
+}
+
+.item6 {
+    background: skyblue;
+}
+
+.item7 {
+    background: blue
+}
+
+.item8 {
+    background: blueviolet;
+}
+
+.item9 {
+    background: purple
+}
+
+.item10 {
+    background: grey;
+}
