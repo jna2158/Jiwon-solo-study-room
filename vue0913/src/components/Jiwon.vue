@@ -1,12 +1,13 @@
 <template>
   <div>
-    <p>{{ name }}</p>
+    <p>{{ title }}</p>
     <button @click="updateName">click</button>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["title"],
   data() {
     return {
       name: "jiwon",

@@ -1,20 +1,30 @@
 <template>
   <div>
     <h1>This is Home page</h1>
-    <jiwon></jiwon>
+    <form action="">
+      <br />
+      <InputField :name="name" @update-name="updateName" />
+      <button>submit</button>
+    </form>
+    {{ name }}
   </div>
 </template>
 
 <script>
-import Jiwon from "../components/Jiwon.vue";
+import InputField from "../components/InputField.vue";
 export default {
   components: {
-    jiwon: Jiwon,
+    InputField,
   },
   data() {
     return {
-      name: "jiwon",
+      name: "",
     };
+  },
+  methods: {
+    updateName(name) {
+      this.name = name;
+    },
   },
 };
 </script>
