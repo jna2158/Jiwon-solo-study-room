@@ -8,18 +8,33 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app">{{reversedMessage}}</div>
+    <div id="app">
+      {{message}}
+      <button @click="changeMessage">Click Me!!!</button>
+      {{updated}}
+    </div>
     <script>
       new Vue({
         //뷰 인스턴스 생성하기
         el: "#app",
         data: {
           message: "안녕하세요",
+          updated: "아니요",
         },
-        methods: {},
+        methods: {
+          changeMessage() {
+            this.message = "jiwon";
+          },
+        },
         computed: {
           reversedMessage() {
             return this.message.split("").reverse().join("");
+          },
+        },
+        watch: {
+          //newVal, oldVal message
+          message(newVal, oldVal) {
+            this.updated = "네";
           },
         },
       });
