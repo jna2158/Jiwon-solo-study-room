@@ -1,7 +1,9 @@
 <template>
   <div>
-    <p>{{ title }}</p>
-    <button @click="updateName">click</button>
+    <p>header</p>
+    <slot name="header"></slot>
+    <p>body</p>
+    <p>footer</p>
   </div>
 </template>
 
