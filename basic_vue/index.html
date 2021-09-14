@@ -9,32 +9,20 @@
   </head>
   <body>
     <div id="app">
-      {{nextYear("안녕하세요")}}
-      <input :type="type" :value="inputData" />
-      <a :href="link">유튜브</a>
+      <form v-on:submit.prevent="submit">
+          <input type="text"><br>
+        <input type="submit" >submit!</input>
+      </form>
     </div>
     <script>
       new Vue({
         //뷰 인스턴스 생성하기
         el: "#app",
-        data: {
-          person: {
-            name: "jiwon",
-            age: 30,
-          },
-          inputData: "hello",
-          type: "text",
-          link: "https://www.youtube.com",
-        },
+        data: {},
         methods: {
-          nextYear(greeting) {
-            return `${greeting}! ${this.person.name}은 내년에 ${
-              this.person.age + 1
-            }살 입니다.`;
-          },
-          otherMethods() {
-            this.nextYear();
-          },
+          submit() {
+              alert("succeed")
+          }
         },
       });
     </script>
