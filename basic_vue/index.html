@@ -8,27 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app">
-      <form v-on:submit.prevent="submit">
-        <!-- <input type="text" :value="text" @keyup="updateText"><br> -->
-        <input type="text" v-model="text"><br>
-
-        {{text}} <br>
-        <input type="submit" >submit!</input>
-      </form>
-    </div>
+    <div id="app">{{reversedMessage}}</div>
     <script>
       new Vue({
         //뷰 인스턴스 생성하기
         el: "#app",
         data: {
-            year: 2021,
-            text: "text"
+          message: "안녕하세요",
         },
-        methods: {
-        //   updateText(event) {
-        //     this.text = event.target.value;
-        //   }
+        methods: {},
+        computed: {
+          reversedMessage() {
+            return this.message.split("").reverse().join("");
+          },
         },
       });
     </script>
