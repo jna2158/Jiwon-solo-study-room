@@ -10,22 +10,41 @@
   </head>
   <body>
     <div id="app">
-      <div v-for="(person, index) in people" :key="name">
-        {{person.name}} {{person.age}} {{index}}
-      </div>
+      <jiwon-button></jiwon-button>
     </div>
+
     <script>
-      new Vue({
-        //뷰 인스턴스 생성하기
-        el: "#app",
-        data: {
-          people: [
-            { name: "a", age: 20 },
-            { name: "b", age: 21 },
-            { name: "c", age: 22 },
-          ],
+      // Vue.component("jiwon-button", {
+      //   template: `<div>{{name}}<button @click="nameupdated">click!</button></div>`,
+      //   data() {
+      //     return {
+      //       name: "jiwon",
+      //     };
+      //   },
+      //   methods: {
+      //     nameupdated() {
+      //       this.name = "jiwon updated";
+      //     },
+      //   },
+      // });
+      const JiwonButton = {
+        template: `<div>{{name}}<button @click="nameupdated">click!</button></div>`,
+        data() {
+          return {
+            name: "jiwon",
+          };
         },
-        methods: {},
+        methods: {
+          nameupdated() {
+            this.name = "jiwon updated";
+          },
+        },
+      };
+      const app = new Vue({
+        el: "#app",
+        components: {
+          "jiwon-button": JiwonButton,
+        },
       });
     </script>
   </body>
