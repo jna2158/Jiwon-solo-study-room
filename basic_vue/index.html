@@ -10,7 +10,10 @@
   <body>
     <div id="app">
       <form v-on:submit.prevent="submit">
-          <input type="text"><br>
+        <!-- <input type="text" :value="text" @keyup="updateText"><br> -->
+        <input type="text" v-model="text"><br>
+
+        {{text}} <br>
         <input type="submit" >submit!</input>
       </form>
     </div>
@@ -18,11 +21,14 @@
       new Vue({
         //뷰 인스턴스 생성하기
         el: "#app",
-        data: {},
+        data: {
+            year: 2021,
+            text: "text"
+        },
         methods: {
-          submit() {
-              alert("succeed")
-          }
+        //   updateText(event) {
+        //     this.text = event.target.value;
+        //   }
         },
       });
     </script>
