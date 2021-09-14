@@ -5,28 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue 기초 익히기</title>
-    <style>
-      .red {
-        color: red;
-      }
-      .font-bold {
-        font-weight: bold;
-      }
-    </style>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
   <body>
     <div id="app">
-      <!-- <div v-if="show">Yes</div>
-      <div v-else="show">No</div> -->
-      <div v-show="show">Yes</div>
+      <div v-for="(person, index) in people" :key="name">
+        {{person.name}} {{person.age}} {{index}}
+      </div>
     </div>
     <script>
       new Vue({
         //뷰 인스턴스 생성하기
         el: "#app",
         data: {
-          show: false,
+          people: [
+            { name: "a", age: 20 },
+            { name: "b", age: 21 },
+            { name: "c", age: 22 },
+          ],
         },
         methods: {},
       });
