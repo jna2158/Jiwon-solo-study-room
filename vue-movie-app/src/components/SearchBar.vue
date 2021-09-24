@@ -16,23 +16,31 @@
 </template>
 
 <script>
-import axios from "axios"
+import { mapActions } from "vuex"
 export default {
-    data() {
-        return {
-            title: "",
-            loading: false
-            
+   
+    computed: {
+        title: {
+            //getter
+            get() { // 값을 얻어오는 역할 (store에서 데이터 가져오기)
+                return this.$store.state.movie.title
+            },
+
+            //setter
+            set(title) { // 양방향 데이터 바인딩을 위해 state 수정 (mutation의 도움을 받아서 title 수정)
+                this.$store.commit('movie/updateState', {
+                    title
+                })
+            }
+        },
+        loading() {
+            return this.$store.state.movie.loading
         }
     },
     methods: {
-        async searchMovies() {
-            this.loading = true;
-            const res = await axios.get(`http://www.omdbapi.com?&apikey=9d38c929&s=${this.title}`);
-            console.log(res)
-            this.loading = false;
-            
-        }
+        ...mapActions('movie', [
+            'searchMovies'
+        ])
     }
 }
 </script>
