@@ -34,6 +34,7 @@ export default {
             }
         },
         loading() {
+            console.log("aaaaa")
             return this.$store.state.movie.loading
         }
     },
