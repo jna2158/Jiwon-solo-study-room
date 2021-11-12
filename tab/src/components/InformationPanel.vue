@@ -79,7 +79,7 @@
           <td>name</td>
           <td>~~~</td>
         </tr>
-        <textarea>InformationPanel</textarea>
+        <textarea disabled>InformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanelInformationPanel</textarea>
       </tbody>
     </table>
 
@@ -87,18 +87,23 @@
       <tbody>
         <tr>
           <td>name</td>
+          <td>~~~</td>
         </tr>
         <tr>
           <td>width</td>
+          <td>~~~</td>
         </tr>
         <tr>
           <td>height</td>
+          <td>~~~</td>
         </tr>
         <tr>
           <td>resolution</td>
+          <td>~~~</td>
         </tr>
         <tr>
           <td>magnification</td>
+          <td>~~~</td>
         </tr>
       </tbody>
     </table>
@@ -118,25 +123,53 @@ export default {
 
 <style scoped>
 .panel {
-  border: 1px solid red;
+  border: 1px solid rgb(16, 10, 53);
   width: 200px;
 }
+
+.panel-tabs {
+  margin-bottom: 5px;
+}
+
 .panel-block {
   border: 1px solid blue;
+  margin: 0px;
   max-height: 420px;
   overflow: auto;
   overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid black;
+  margin: 2px;
+}
+
+::-webkit-scrollbar-button:vertical:decrement, 
+::-webkit-scrollbar-button:vertical:increment {
+  border: 1px solid black;
+}
+
+a,
+a.is-active{
+  margin: 0px 7px 0px 7px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
 .table {
   margin-bottom: 0 !important;
   width: 100%;
   table-layout: fixed;
 }
+
 .is-active {
   color: white;
   font-weight: 600;
   background-color: #4472C4;
-  padding: 5px;
 }
 
 td {
@@ -157,6 +190,11 @@ td:last-child {
   color: $color_gray_dark;
 }
 
+textarea {
+  height: 70px;
+  width:180px;
+}
+
 .buttons {
   justify-content: center;
 }
@@ -174,17 +212,20 @@ td:last-child {
 .fa-angle-right {
   margin-left: 0.4em;
 }
+
 .panel-options {
   padding: 0px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.06);
   background-color: #ffffff;
 }
+
 .btn-calibration {
   width: 49%;
   margin-right: 3px;
   background-color: $color_purple;
   font-size: 1px;
 }
+
 .btn-info {
   width: 48%;
   margin-left: 3px;
@@ -192,33 +233,40 @@ td:last-child {
   line-height: 35px;
   font-size: 1px;
 }
+
 .btn-download {
   width: 100%;
   background-color: $color_blue;
 }
+
 .icon-download {
   width: 10px;
   margin-right: 5px;
 }
+
 .pre-img {
   width: 50%;
   float: left;
   font-size: 11px;
 }
+
 .next-img {
   width: 50%;
   float: left;
   font-size: 11px;
   text-align: right;
 }
+
 .icon-navigation {
   font-size: 10px;
   padding: 2px;
   margin: 0px 5px;
 }
+
 .icon-navi {
   width: 10px;
 }
+
 .fa-angle-left, .fa-angle-right {
   margin: 0px;
 }
