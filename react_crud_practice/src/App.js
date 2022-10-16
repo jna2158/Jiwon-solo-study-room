@@ -1,5 +1,6 @@
 import "./App.css";
 
+// list 컴포넌트
 function List({ lis }) {
   return (
     <ul>
