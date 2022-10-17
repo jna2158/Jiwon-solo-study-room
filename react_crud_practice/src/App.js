@@ -1,13 +1,23 @@
 import "./App.css";
 
 // list 컴포넌트
-function List({ lis }) {
+function List({ lis, onChangeMode }) {
   return (
-    <ul>
+    <>
       {lis.map((el) => {
-        return <li key={el.id}>{el.contents}</li>;
+        return (
+          <div
+            key={el.id}
+            onClick={(event) => {
+              event.preventDefault();
+              onChangeMode();
+            }}
+          >
+            {el.contents}
+          </div>
+        );
       })}
-    </ul>
+    </>
   );
 }
 
@@ -20,7 +30,12 @@ function App() {
 
   return (
     <div>
-      <List lis={lis}></List>
+      <List
+        lis={lis}
+        onChangeMode={() => {
+          alert("Header");
+        }}
+      ></List>
     </div>
   );
 }
