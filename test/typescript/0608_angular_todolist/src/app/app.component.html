@@ -1,0 +1,14 @@
+<form id="todoform" action="">
+  <input
+    type="text"
+    placeholder="할일을 적어주세요"
+    [formControl]="todoInput"
+  />
+  <button (click)="assignTodo($event)">등록</button>
+</form>
+
+<ng-container>
+  <ul *ngFor="let item of todo">
+    <li>{{ item }}</li>
+  </ul>
+</ng-container>
