@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  line-height: 1.5em;
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Dropdown Navigation */
+.item-desc {
+  display: none;
+  border: 3px solid black;
+  padding: 5px 15px;
+  font-size: 14px;
+}
+
+.item-desc ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  margin-bottom: 15px;
+  background-color: #eee;
+}
+
+.item-desc ul li:before {
+  content: "- ";
+}
+
+.item-desc p {
+  text-align: center;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.items {
+  width: 1280px;
+  display: flex;
+  gap: 40px;
+}
+
+.item {
+  flex: 1;
+}
+
+.item:nth-child(1) .item-list {
+  background-color: #195fab;
+}
+.item:nth-child(2) .item-list {
+  background-color: #5049a9;
+}
+.item:nth-child(3) .item-list {
+  background-color: #8c66c1;
+}
+
+.item-list {
+  background-color: navy;
+  color: #ffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.btn {
+  background-color: #000;
+  color: white;
+  padding: 5px;
+  margin: 3px;
+  width: 80px;
+  display: inline-block;
+}
+
+.btn.download {
+  width: 200px;
+}
+
+.item-list h4 {
+  font-weight: 300;
+}
+
+.item {
+  position: relative;
+}
+
+.item:hover .item-desc {
+  display: block;
+}
+
+.item-desc {
+  position: absolute;
+  background-color: #fff;
+}

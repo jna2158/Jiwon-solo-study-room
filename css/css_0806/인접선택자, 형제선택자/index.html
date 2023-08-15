@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    input[id="trigger"] {
+      display: none;
+    }
+
+    label[for="trigger"] {
+      width: 30px;
+      height: 20px;
+      display: block;
+      position: relative;
+      z-index: 1000;
+    }
+
+    label[for="trigger"] span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    label[for="trigger"] span:nth-child(1) {
+      top: 0;
+    }
+
+    label[for="trigger"] span:nth-child(2) {
+      top: 50%;
+    }
+
+    label[for="trigger"] span:nth-child(3) {
+      top: 100%;
+    }
+
+    input[id="trigger"]:checked + label span:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+
+    input[id="trigger"]:checked + label span:nth-child(2) {
+      opacity: 0;
+    }
+
+    input[id="trigger"]:checked + label span:nth-child(3) {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: pink;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: 0.3s;
+    }
+
+    input[id="trigger"]:checked ~ .sidebar {
+      left: 0px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <!-- input의 id와 label의 for를 같은 이름으로 지정하면
+        checkbox는 보이지 않지만 누르는 동작을 label이 받아서 이벤트를 전달함 -->
+      <input type="checkbox" id="trigger" />
+      <label for="trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar"></div>
+    </div>
+  </body>
+</html>
