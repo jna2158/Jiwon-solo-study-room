@@ -1,0 +1,51 @@
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  color: transparent;
+  text-decoration: none;
+  font-size: 10em;
+  font-weight: 500;
+  -webkit-text-stroke: 1px #fff;
+  transition: 0.3s;
+  position: relative;
+}
+
+.btn:before,
+.btn:after {
+  content: attr(data-text);
+  -webkit-text-stroke: 1px transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.btn:before {
+  color: royalblue;
+}
+
+.btn:after {
+  color: crimson;
+}
+
+/* Hover Event */
+.btn:hover {
+  color: #fff;
+}
+.btn:hover:before {
+  opacity: 1;
+  transform: translate(10px, -10px);
+}
+.btn:hover:after {
+  opacity: 1;
+  transform: translate(20px, -20px);
+}
